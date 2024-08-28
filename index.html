@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
 
 </head>
@@ -17,6 +17,61 @@
     </section>
 
 
+<script>
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function getComputerChoice(){
+        let result = Math.floor(Math.random() * 3);
+        if(result === 0){
+            return ('Rock')
+        }else if(result === 1){
+            return ('Paper')
+        }else if(result === 2){
+            return ('Scissors')
+        }
+    }
+
+    
+    function getHumanChoice(){
+        let result = prompt(['Rock', ' Paper', ' Scissors']);
+        if(result === 'Rock'){
+            return ('Rock')
+        }else if(result === 'Paper'){
+            return ('Paper')
+        }else if(result === 'Scissors'){
+            return ('Scissors')
+        }
+    }
+
+    function playRound(humanChoice, computerChoice){
+        if(humanChoice === computerChoice){
+            console.log('This round is a tie!')
+        }else if(            
+            (humanChoice === 'Rock' && computerChoice === 'Scissors')||
+            (humanChoice === 'Scissors' && computerChoice ==='Paper')||
+            (humanChoice === 'Paper' && computerChoice === 'Rock')
+        ) {
+            console.log('You win!!');
+            humanScore++;
+            console.log('Your score is : ' + humanScore);
+        }else{
+            console.log('You lose!!')
+            computerScore++;
+            console.log('Computers score is : ' + computerScore);
+        }
+    }
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+
+</script>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
