@@ -20,6 +20,6 @@ function startBuzzFizz(){
     resultsDiv.textContent = results;
 }
 
-document.getElementById('startButton').addEventListener('click', startBuzzFizz);
+document.getElementById('buzzFizzStartButton').addEventListener('click', startBuzzFizz);
 
 
